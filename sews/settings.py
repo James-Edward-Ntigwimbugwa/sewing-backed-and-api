@@ -41,13 +41,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "demoApp",
     "graphene_django",
     "corsheaders",
     'rest_framework',
     'rest_framework_simplejwt',
- 
-    
+
+    "users",
+    'products'
    
 ]
 
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'demoApp.middleware.JSONWebTokenMiddleware',
+    'users.middleware.JSONWebTokenMiddleware',
     
    
 ]
@@ -156,7 +156,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 GRAPHENE = {
-    "SCHEMA": "demoApp.schema.schema",  # adjust this to your schema path
+    "SCHEMA": "users.schema.schema",  # adjust this to your schema path
     "MIDDLEWARE": [
         "graphql_jwt.middleware.JSONWebTokenMiddleware",
     ],
@@ -181,6 +181,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
-AUTH_USER_MODEL = 'demoApp.CustomUser'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 
