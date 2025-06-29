@@ -1,0 +1,21 @@
+# Create a CustomUser superuser
+CustomUser.objects.create_superuser(
+    email='admin@example.com',
+    password='secure_password',
+    first_name='Admin',
+    last_name='User'
+)
+
+superuser
+email:misanavenance77@gmail.com
+password:2002Venance@
+
+# Create a TailorDetail superuser
+TailorDetail.objects.create_superuser(
+    username='tailor_admin',
+    full_name='Tailor Admin', 
+    national_id_number='12345',
+    phone_number='555-1234',
+    password='secure_password',
+    email='tailor@example.com'
+)

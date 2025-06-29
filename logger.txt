@@ -1,0 +1,23 @@
+(0.000) SELECT 1 AS "a" FROM "demoApp_tailordetail" WHERE "demoApp_tailordetail"."username" = 'james20' LIMIT 1; args=(1, 'james20'); alias=default
+
+(0.000) SELECT 1 AS "a" FROM "demoApp_tailordetail" WHERE "demoApp_tailordetail"."email" = 'jamesnavigator2005@gmail.com' LIMIT 1; args=(1, 'jamesnavigator2005@gmail.com'); alias=default
+
+
+(0.000) INSERT INTO "demoApp_tailordetail" 
+("password", "last_login", "is_superuser", "is_active", "is_staff", "full_name", "username", "email", "national_id_number", "phone_number", "sex", "passport_size",
+ "area_of_residence", "area_of_work", "date_of_registration") 
+
+VALUES ('pbkdf2_sha256$600000$bFpVAlfY6RmiWfnjyBchgQ$tZX0bLAqjjPy8j/Ka2KH4R+Z0Do3bm0yCo3GXxPav1Y=', NULL, 0, 1, 0, 'koma', 'james20', 'jamesnavigator2005@gmail.com', 
+'4567890876577', '2345677', 'M', 'hbk', 'kama', 'sua', '2024-10-10') RETURNING "demoApp_tailordetail"."id";
+ args=('pbkdf2_sha256$600000$bFpVAlfY6RmiWfnjyBchgQ$tZX0bLAqjjPy8j/Ka2KH4R+Z0Do3bm0yCo3GXxPav1Y=', None, False, True, False, 'koma', 'james20', 
+ 'jamesnavigator2005@gmail.com', '4567890876577', '2345677', 'M', 'hbk', 'kama', 'sua', '2024-10-10'); alias=default
+
+
+ Incoming GraphQL request: {                                      
+  "operationName": "RegisterTailor",
+  "variables": {},
+  "query": "mutation RegisterTailor($full_name: String!, $username: String!, $email: String!, $national_id_number: String!, $phone_number: String!, $sex: String!, 
+  $passport_size: String!, $area_of_residence: String!, $area_of_work: String!, $password: String!) {\n  registerTailor(\n    full_name: $full_name\n    username: $username\n  
+    email: $email\n    national_id_number: $national_id_number\n    phone_number: $phone_number\n    sex: $sex\n    passport_size: $passport_size\n    area_of_residence: $area_of_residence\n  
+      area_of_work: $area_of_work\n    password: $password\n  ) {\n    tailor {\n      id\n      full_name\n      username\n      email\n      __typename\n    }\n    __typename\n  }\n}"
+}
