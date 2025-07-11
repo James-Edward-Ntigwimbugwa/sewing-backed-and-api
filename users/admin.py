@@ -7,5 +7,3 @@ from .models import TailorDetail, TailorProduct,CustomUser
 admin.site.register(TailorDetail)
 admin.site.register(TailorProduct)
 admin.site.register(CustomUser)
-
-
